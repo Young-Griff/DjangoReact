@@ -24,7 +24,6 @@ from .models import *
 # authentication views
 @api_view(["POST"])
 @permission_classes([AllowAny])
-@csrf_exempt
 def api_login(request: Request):
     # get username and password of request
     if request.method == 'POST':
