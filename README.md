@@ -94,19 +94,19 @@ Seeded accounts use password `Test_123!` (see `backend/scripts/_seed_test_users.
 
 Base path: `http://<host>:8000/api/`
 
-| Endpoint                     | Methods | Notes                          |
-| ---------------------------- | ------- | ------------------------------ |
-| `login/`                     | POST    | Session login (AllowAny)       |
-| `logout/`                    | POST    | Session logout (authenticated) |
-| `user-status/`               | GET     | Whether a session is active    |
-| `get-csrf/`                  | GET     | Sets CSRF cookie for the SPA   |
-| `departments/`               | GET     | List departments               |
-| `department-courses/<dept>/` | GET     | Courses for a department       |
-| `employees/`                 | GET     | Worker listings                |
-| `users/`                     | GET     | School users                   |
-| `get-roles/`                 | GET     | Worker role choices            |
-| `add-employee/`              | POST    | Add worker role                |
-| `remove-role/<id>`           | —       | Remove worker role             |
+| Endpoint                     | Methods   | Notes                          |
+| ---------------------------- | --------- | ------------------------------ |
+| `login/`                     | POST      | Session login (AllowAny)       |
+| `logout/`                    | POST      | Session logout (authenticated) |
+| `user-status/`               | GET       | Whether a session is active    |
+| `get-csrf/`                  | GET       | Sets CSRF cookie for the SPA   |
+| `departments/`               | GET       | List departments               |
+| `department-courses/<dept>/` | GET       | Courses for a department       |
+| `employees/`                 | GET       | Worker listings                |
+| `users/`                     | GET       | School users                   |
+| `get-roles/`                 | GET       | Worker role choices            |
+| `add-employee/`              | POST, PUT | Add/Edit worker role           |
+| `remove-role/<id>`           | DELETE    | Remove worker role             |
 
 Django admin is available at `/admin/` when a staff user exists.
 
