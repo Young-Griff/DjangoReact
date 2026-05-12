@@ -1,0 +1,25 @@
+nav {
+    background-color: #faf624;
+    max-height: 50px;
+    color: #fff;
+
+}
+
+.auth-link {
+    align-items: right;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin-left: 15px;
+}

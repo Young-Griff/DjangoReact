@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+        <label for="logout">Are You Sure You Want to Logout?</label>
+        <button class="btn btn-primary" type="submit" id="logout">Log Out</button>
+        <a class="btn btn-secondary" href="http://localhost:5173">Cancel</a>
+        </div>
+    </form> 
+{% endblock %}
