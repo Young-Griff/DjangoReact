@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import axios from "axios";
 import "./EmployeeAdd.css";
+import "./Login.css";
 import { useAuth } from "../context/AuthContext";
 import { fetchRoles } from "./Employees";
 
@@ -91,7 +92,6 @@ function AddEmployee() {
   function adjustSize(e: any) {
     if (selected) setSelected(false);
     else setSelected(true);
-    console.log(selected);
   }
 
   return (
@@ -221,7 +221,7 @@ function AddEmployee() {
           </div>
 
           <div className="employee-add__actions">
-            <button type="submit" className="employee-add__submit">
+            <button type="submit" className="btn btn-primary login-submit">
               Save Role
             </button>
           </div>

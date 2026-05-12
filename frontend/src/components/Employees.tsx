@@ -31,10 +31,8 @@ export function getEmployees(setter: (emps: Employee[]) => void) {
   const fetchData = async () => {
     try {
       const response = await axios.get(url, { withCredentials: true });
-      console.log(response);
       setter(response.data);
     } catch (e: any) {
-      console.log(e.response);
     }
   };
   fetchData();
@@ -88,7 +86,6 @@ function Employees() {
   function handleEditSubmit(data: Inputs) {
     const updateEmp = async () => {
       try {
-        console.log(csrfToken);
         const response = await axios.put(
           localStorage.getItem("apiURL") + "add-employee/",
           data,

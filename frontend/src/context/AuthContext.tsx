@@ -46,9 +46,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
 
     const status = () => {
-      const sessionExpiry = Number(localStorage.getItem("sessionExpiry") || 0); 
-      console.log(sessionExpiry);
-      console.log((sessionExpiry - Date.now()) / 1000);
+      const sessionExpiry = Number(localStorage.getItem("sessionExpiry") || 0);
       if (sessionExpiry < Date.now()) {
         localStorage.removeItem("user");
         setUser(null);
@@ -69,7 +67,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (!apiURL) return null;
     await axios.get(`${apiURL}get-csrf/`, { withCredentials: true });
     const token = getCsrfTokenFromCookies();
-    console.log("Got Token: ", token);
     setCsrfToken(token);
     if (token) {
       localStorage.setItem("csrfToken", token);
@@ -86,7 +83,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const logout = useCallback(async () => {
     try {
-      console.log("Token: ", csrfToken);
       await axios.post(localStorage.getItem("apiURL") + "logout/", {},
         {
           withCredentials: true,

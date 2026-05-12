@@ -41,30 +41,56 @@ function Login() {
   };
 
   return (
-    <form className="login-form" onSubmit={handleLogin}>
-      <h3>Welcome Back!</h3>
-      <div className="form-group">
-        <input
-          type="text"
-          value={username}
-          placeholder="Username"
-          onChange={(e) => setUsername(e.target.value)}
-          className="form-control"
-        />
-      </div>
-      <div className="form-group">
-        <input
-          type="password"
-          value={password}
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-          className="form-control"
-        />
-      </div>
-      <button type="submit" className="btn btn-primary">
-        Submit
-      </button>
-    </form>
+    <main className="login-page">
+      <form className="login-form" onSubmit={handleLogin} aria-labelledby="login-title">
+        <header className="login-header">
+          <p className="login-eyebrow">School portal</p>
+          <h1 id="login-title" className="login-title">
+            Welcome back
+          </h1>
+          <p className="login-lead">Sign in with your school account to continue.</p>
+        </header>
+
+        <div className="login-fields">
+          <div className="form-group">
+            <label className="form-label" htmlFor="login-username">
+              Username
+            </label>
+            <input
+              id="login-username"
+              type="text"
+              name="username"
+              value={username}
+              placeholder="Enter your username"
+              onChange={(e) => setUsername(e.target.value)}
+              className="form-control"
+              autoComplete="username"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label className="form-label" htmlFor="login-password">
+              Password
+            </label>
+            <input
+              id="login-password"
+              type="password"
+              name="password"
+              value={password}
+              placeholder="Enter your password"
+              onChange={(e) => setPassword(e.target.value)}
+              className="form-control"
+              autoComplete="current-password"
+              required
+            />
+          </div>
+        </div>
+
+        <button type="submit" className="btn btn-primary login-submit">
+          Sign in
+        </button>
+      </form>
+    </main>
   );
 }
 

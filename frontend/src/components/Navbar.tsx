@@ -19,7 +19,6 @@ function Navbar() {
   }
   const logoutUser = async (e: SyntheticEvent) => {
     e.preventDefault();
-    console.log("Logging Out!");
     await logout();
     navigate("/");
   };

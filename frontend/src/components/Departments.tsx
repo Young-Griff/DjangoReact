@@ -13,14 +13,12 @@ type DepartmentRow = {
 async function getDepartments() {
   try {
     if (localStorage.getItem("departments") == null) {
-      console.log("HERE");
       useEffect(() => {
         fetchData();
       }, []);
       // Match API host to the page host so the session cookie from Django (localhost
       // vs 127.0.0.1) is always sent with credentialed requests.
       const apiURL = localStorage.getItem("apiURL");
-      console.log(apiURL);
       const fetchData = async () => {
         const response = await axios.get(apiURL + "departments/", {
           withCredentials: true,
@@ -66,13 +64,10 @@ function DepartmentCardImage({ slug }: { slug: string }) {
 export function DepartmentList() {
   //const [depts, setDepts] = useState<DepartmentRow[]>([]);
   getDepartments();
-  console.log(localStorage.getItem("departments"));
   const depts = JSON.parse(localStorage.getItem("departments") || null);
   if (depts == null) {
     return <h1>Error Fetching Departments :( </h1>
   }
-  console.log(depts);
-  //setDepts(deptResponse);
 
   return (
     <section className="dept-list">
@@ -128,7 +123,6 @@ function DeptDetails(DeptDetails: DeptDetailsProp) {
     );
     console.log(response);
     setCourses(response.data);
-    console.log(courses);
   };
   return (
     <div>
@@ -156,7 +150,6 @@ type DeptProp = {
 export function Dept({ dept }: DeptProp) {
   getDepartments();
   const depts = JSON.parse(localStorage.getItem("departments") || "");
-  console.log(depts);
   let deptData = null;
   // get details for passed department
   for (const d of depts) {

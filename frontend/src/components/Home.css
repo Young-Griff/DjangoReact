@@ -1,0 +1,13 @@
+.home-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.home-title {
+    margin: auto;
+    text-align: center;
+    color: var(--accent);
+    font-weight: bold;
+    border-bottom: 2px dashed var(--accent);
+    margin-bottom: 10px;
+}
